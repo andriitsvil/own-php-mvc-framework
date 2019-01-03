@@ -12,7 +12,10 @@ function __autoload($class_name){
     }elseif ( file_exists($model_path) ){
         require_once ($model_path);
     }else{
-       // var_dump($class_name);
         throw new Exception('fail with class '.$class_name);
     }
+}
+
+function __($key, $default_value = ''){
+    return Lang::get($key, $default_value);
 }

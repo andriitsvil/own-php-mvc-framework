@@ -2,6 +2,7 @@
 
 Config::set('site', 'mvc_pa');
 Config::set('languages', array('en','ru'));
+Config::set('charset', 'utf-8');
 Config::set('routes', array(
     'default' => '',
     'admin' => 'admin_'

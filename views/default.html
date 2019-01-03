@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><?=Config::get('site')?></title>
+        <meta charset="<?=Config::get('charset')?>">
+    </head>
+    <body>
+        <h3>Header</h3>
+
+        <?=$data['content']?>
+        <br>
+        <br>
+        <?=__('lng.test2','default_value') ?>
+        <h3>Footer</h3>
+    </body>
+</html>
