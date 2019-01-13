@@ -11,3 +11,9 @@ Config::set('default_route', 'default');
 Config::set('default_language', 'en');
 Config::set('default_controller', 'pages');
 Config::set('default_action', 'index');
+
+
+Config::set('db.host', '127.0.0.1');
+Config::set('db.user', 'newuser');
+Config::set('db.password', 'password');
+Config::set('db.db_name', 'mvc');
