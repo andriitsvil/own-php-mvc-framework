@@ -35,6 +35,12 @@
 
 <main role="main" class="container" style="margin-top: 80px;">
   <div class="starter-template">
+    <?php if(Session::hasFlash()){ ?>
+    <div class="alert alert-info" role="alert">
+      <?php Session::flash(); ?>
+    </div>
+    <?php } ?>
+
     <?=$data['content']?>
   </div>
 </main><!-- /.container -->
