@@ -1,0 +1,23 @@
+<h3>Pages</h3>
+<br>
+<table class="table table-striped" style="width: 400px;">
+  <?php foreach($data['pages'] as $page_data){ ?>
+    <tr>
+      <td><b><?=$page_data['title']?></b></td>
+      <td align="right">
+        <a href="/<?=Config::get('site')?>/admin/pages/edit/<?=$page_data['id']?>">
+          <button class="btn btn-sm btn-primary">edit</button>
+        </a>
+        <a href="/<?=Config::get('site')?>/admin/pages/delete/<?=$page_data['id']?>" onclick="return confirmDelete(); ">
+          <button class="btn btn-sm btn-warning">delete</button>
+        </a>
+      </td>
+    </tr>
+  <?php } ?>
+</table>
+<br>
+<div>
+  <a href="/<?=Config::get('site')?>/admin/pages/add/<?=$page_data['id']?>">
+    <button class="btn btn-sm btn-success">new page</button>
+  </a>
+</div>
