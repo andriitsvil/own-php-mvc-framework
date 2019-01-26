@@ -21,7 +21,7 @@ class Message extends Model
       $sql = "
         INSERT INTO messages
           SET name = '{$name}',
-              email = '{$email}',
+              email = '{$email}x',
               message = '{$message}'
           
       ";
@@ -35,6 +35,11 @@ class Message extends Model
       ";
     }
 
+    return $this->db->query($sql);
+  }
+
+  public function getList(){
+    $sql = "SELECT * FROM messages WHERE 1";
     return $this->db->query($sql);
   }
 }

@@ -19,6 +19,8 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+
+    <?php if(Session::get('login')){ ?>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a href="/<?=Config::get('site')?>/admin/contacts/" class="nav-link <?php if( App::getRouter()->getController() === 'contacts') { ?> active <?php } ?>" >Contacts</a>
@@ -26,7 +28,11 @@
       <li class="nav-item">
         <a href="/<?=Config::get('site')?>/admin/pages/" class="nav-link <?php if( App::getRouter()->getController() === 'pages') { ?> active <?php } ?>" >Pages</a>
       </li>
+      <li class="nav-item">
+        <a href="/<?=Config::get('site')?>/admin/users/logout/" class="nav-link">Logout</a>
+      </li>
     </ul>
+    <?php } ?>
   </div>
 </nav>
 
