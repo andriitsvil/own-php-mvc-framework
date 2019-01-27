@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Янв 22 2019 г., 22:14
+-- Время создания: Янв 27 2019 г., 22:58
 -- Версия сервера: 10.1.34-MariaDB
 -- Версия PHP: 7.2.8
 
@@ -40,7 +40,9 @@ CREATE TABLE `messages` (
 --
 
 INSERT INTO `messages` (`id`, `name`, `email`, `message`) VALUES
-(1, 'Andrii Tsvil', 'fsd@ffrw.com', 'werteyr');
+(1, 'Andrii Tsvil', 'fsd@ffrw.com', 'werteyr'),
+(2, 'Andrii Tsvil', 'fsd@ffrw.com', 'werteyr'),
+(3, 'andrii', 'andrii@mil.com', 'test message');
 
 -- --------------------------------------------------------
 
@@ -61,7 +63,8 @@ CREATE TABLE `pages` (
 --
 
 INSERT INTO `pages` (`id`, `alias`, `title`, `content`, `is_published`) VALUES
-(1, 'about', 'About Us', 'Test content', 1);
+(1, 'about', 'About Us', 'Test content', 1),
+(5, 'products', 'Products', 'Some products here', 1);
 
 -- --------------------------------------------------------
 
@@ -77,6 +80,13 @@ CREATE TABLE `users` (
   `password` char(32) NOT NULL,
   `is_active` tinyint(1) UNSIGNED DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `users`
+--
+
+INSERT INTO `users` (`id`, `login`, `email`, `role`, `password`, `is_active`) VALUES
+(1, 'admin', 'admin@mail.com', 'admin', '5661058c5e1175e0a215598ec4ae6d4b', 1);
 
 --
 -- Индексы сохранённых таблиц
@@ -108,19 +118,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
